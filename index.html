@@ -19,6 +19,16 @@
 						<label>Note Text</label>
 						<textarea class="form-control" type="text" v-model="note.text"></textarea> 
 					</div>
+					<button class="btn btn-primary" @click="addNote">Submit</button>
+				</div>
+				<div class="col-sm-12">
+					<div class="col-sm-4 note" v-for="note in notes">
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">{{note.title}}</h4>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -29,9 +39,24 @@
 		 		title:"Notemaster App",
 		 		note:{
 		 			title:'',
-		 			text:''
-		 		}
+		 			text:''	,	 		
+		 		},
+		 		notes:[{
+		 		 	title:'Go to market',
+		 			text:'Buy some healthy food',
+		 			date: new Date(Date.now()).toLocaleString()	,	 
+		 		}]
 		 	},
+		 	methods:{
+		 		addNote(){
+		 			let {title,text} =this.note
+		 			this.notes.push({
+		 				title, 
+		 				text,
+		 				date:new Date(Date.now()).toLocaleString(), 
+		 			})
+		 		}
+		 	}
 		 });	
 		</script>
 	</body>
