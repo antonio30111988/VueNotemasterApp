@@ -1,6 +1,14 @@
 <template>
-	<div class="" @click="switchProfile">
-		{{profile}}
+	<div class="col-md-4" @click="switchProfile">
+		<div class="character-card" >
+			<div class="card-block" >
+				<h4 class="card-title">{{profile.name}}</h4>
+				<p class="card-text">Height: {{profile.height}} cm</p>
+				<p class="card-text">Mass: {{profile.mass}} kg</p>
+				<p class="card-text">Hair color: {{profile.hair_color}} </p>
+				p class="card-text">Eye color: {{profile.eye_color}} </p>
+			</div> 
+		</div>
 	</div>
 </template>
 
