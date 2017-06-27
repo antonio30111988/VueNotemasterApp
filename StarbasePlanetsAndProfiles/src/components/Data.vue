@@ -1,11 +1,18 @@
 <template>
-	<div class="">
-		{{items}}
+	<div class="col-md-12">
+		<Item 
+			v-for="(item,index) in items"
+			key="index"
+			:passed-item="item"
+			:type="type"
+		/>
 	</div>
 </template>
 
 <script>
 import axios from 'axios';
+import Item from './Item.vue';
+
 	export default {
 		data(){
 			return {
@@ -18,7 +25,7 @@ import axios from 'axios';
 		},
 		methods:{
 			fetchItems(){
-				//this.type=this.$route.params.type			
+				this.type=this.$route.params.type			
 				this.items=[]
 				let initial_ids=[3,8,24]
 
@@ -38,8 +45,12 @@ import axios from 'axios';
 		},
 		created(){
 			this.fetchItems()
+		},
+		components:{
+			Item
 		}
 	}
+
 </script>
 
 <style>
