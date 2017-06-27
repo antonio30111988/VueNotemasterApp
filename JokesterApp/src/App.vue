@@ -8,6 +8,7 @@
 		<div class="col-md-12">
 			<Joke v-for="(joke,index) in $store.state.jokes"
 				key="index"
+				:index="index"
 				:joke="joke"
 			/> 
 		</div>
@@ -22,7 +23,7 @@ import Joke from './components/Joke.vue'
 	export default{
 		methods:mapActions([
 			'initJokes',
-			'addJoke'
+			'addJoke',
 		]),
 		components:{
 			Joke
