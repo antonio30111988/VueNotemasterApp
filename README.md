@@ -15,7 +15,7 @@ For fast usage, follow this guide on your CLI after $:
 3. $ npm install
 4. go to wanting app folder StarbaseApp/NotemasterApp/JokesterApp :
    $ cd StarbaseApp/NotemasterApp/JokesterApp
-4. $ npm run dev 
+5. $ npm run dev 
 -started server on port 8080.
 
 Access App on: http://localhost:8080/ .
